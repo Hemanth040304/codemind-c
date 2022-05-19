@@ -1,17 +1,19 @@
 #include<stdio.h>
 int main()
 {
-    int i,j,k,a;
-    scanf("%d",&a);
-    for(i=1;i<=a;i++)
+    int n;
+    scanf("%d",&n);
+    for(int i=0;i<n;i++)
     {
-        for(j=a;j>i;j--)
+        for(int j=0;j<n;j++)
         {
-            printf(" ");
-        }
-        for(k=1;k<=2*i-1;k++)
-        {
-            printf("%d",i);
+            if(i==j || j==0 || j==n-1)
+            {
+                printf("* ");
+            }
+            else{
+                printf("  ");
+            }
         }
         printf("
 ");
