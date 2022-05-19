@@ -31,11 +31,9 @@ void fun(int n)
         }
     }
     if(right-n>n-left || right-n==n-left)
-    printf("%d
-",n-left);
+    printf("%d",n-left);
     else
-    printf("%d
-",right-n);
+    printf("%d",right-n);
 }
 int main()
 {
