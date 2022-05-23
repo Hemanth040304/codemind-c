@@ -1,9 +1,8 @@
 #include<stdio.h>
-int prime(int n){
+int prime(int n)
+{
     if(n==1)
-    {
-        return 0;
-    }
+    return 0;
     for(int i=2;i<n/2;i++)
     {
         if(n%i==0)
@@ -19,9 +18,10 @@ int main()
     {
         if(n%i==0)
         {
-            if(prime(i)){
-                c++;
+            if(prime(i))
+            {
                 printf("%d ",i);
+                c++;
             }
         }
     }
