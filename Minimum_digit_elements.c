@@ -1,36 +1,34 @@
-#include<limits.h>
 #include<stdio.h>
+#include<limits.h>
+int digits(int n)
+{
+    int d = 0;
+    while(n/=10)
+    {
+        d++;
+    }
+    return d;
+}
+
 int main()
 {
-    int n,c=INT_MAX,count=0;
+    int n,c=0,m=INT_MAX;
     scanf("%d",&n);
     int arr[n];
-    for(int i=0,d;i<n;i++)
+    for(int i=0;i<n;i++)
     {
-        d=0;
         scanf("%d",&arr[i]);
-        int temp=arr[i];
-        while(temp)
+        if(digits(arr[i])<m)
         {
-            d++;
-            temp/=10;
-        }
-        if(d<c){
-            c=d;
+            m=digits(arr[i]);
         }
     }
-    for(int i=0,d;i<n;i++)
+    for(int i=0;i<n;i++)
     {
-      d=0;
-        scanf("%d",&arr[i]);
-        while(arr[i])
+        if(digits(arr[i])==m)
         {
-            d++;
-            arr[i]/=10;
+            c++;
         }
-        if(d==c){
-            count++;
-        }   
     }
-    printf("%d",count);
+    printf("%d",c);
 }
