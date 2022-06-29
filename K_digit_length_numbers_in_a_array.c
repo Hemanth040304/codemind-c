@@ -1,25 +1,26 @@
 #include<stdio.h>
+int digits(int n)
+{
+    int d = 0;
+    while(n/=10)
+    {
+        d++;
+    }
+    return d+1;
+}
+
 int main()
 {
-    int n,x,c=0;
-    scanf("%d%d",&n,&x);
+    int n,k,c=0;
+    scanf("%d%d",&n,&k);
     int arr[n];
-    for(int i=0,d;i<n;i++)
+    for(int i=0;i<n;i++)
     {
-        d=0;
         scanf("%d",&arr[i]);
-        if(arr[i]<10 && arr[i]>-10)
-        d=1;
-        else
+        if(k==digits(arr[i]))
         {
-            while(arr[i])
-            {
-                d++;
-                arr[i]/=10;
-            }
+            c++;
         }
-        if(d==x)
-        c++;
     }
     printf("%d",c);
 }
