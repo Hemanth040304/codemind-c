@@ -1,35 +1,32 @@
-
 #include<stdio.h>
+int digits(int n)
+{
+    int d = 0;
+    while(n/=10)
+    {
+        d++;
+    }
+    return d;
+}
+
 int main()
 {
-    int n,c=0,count=0;
+    int n,max=0;
     scanf("%d",&n);
     int arr[n];
-    for(int i=0,d;i<n;i++)
+    for(int i=0;i<n;i++)
     {
-        d=0;
         scanf("%d",&arr[i]);
-        int temp=arr[i];
-        while(temp)
+        if(max<digits(arr[i]))
         {
-            d++;
-            temp/=10;
-        }
-        if(d>c){
-            c=d;
+            max=digits(arr[i]);
         }
     }
-    for(int i=0,d;i<n;i++)
+    for(int i=0;i<n;i++)
     {
-        d=0;
-        int temp=arr[i];
-        while(arr[i])
+        if(digits(arr[i])==max)
         {
-            d++;
-            arr[i]/=10;
+            printf("%d ",arr[i]);
         }
-        if(d==c){
-            printf("%d ",temp);
-        }   
     }
 }
