@@ -1,23 +1,21 @@
 #include<stdio.h>
+int digit(int n)
+{
+    int d=1;
+    while(n/=10)
+    {
+        d++;
+    }
+    return d;
+}
 int main()
 {
     int n;
     scanf("%d",&n);
-    while(n--)
+    int arr[n];
+    for(int i=0;i<n;i++)
     {
-        int a,d=0;
-        scanf("%d",&a);
-        if(a<10 && a>-10)
-        {
-            d=1;
-        }
-        else{
-            while(a)
-            {
-                d++;
-                a/=10;
-            }
-        }
-        printf("%d ",d);
+        scanf("%d",&arr[i]);
+        printf("%d ",digit(arr[i]));
     }
 }
