@@ -1,9 +1,10 @@
 #include<stdio.h>
+#include<limits.h>
 int main()
 {
-    int n;
+    int n,min=INT_MAX,max=INT_MIN;
     scanf("%d",&n);
-    int arr[n],min=0,max=0,k=0;
+    int arr[n],k=0;
     for(int i=0;i<n;i++)
     {
         scanf("%d",&arr[i]);
@@ -18,17 +19,17 @@ int main()
                 c++;
             }
         }
-        if(arr[i]==c)
+        if(c==arr[i])
         {
-            if(max<arr[i])
-            {
-                max=arr[i];
-            }
-            if(min>arr[i] || min==0)
-            {
-                min=arr[i];
-            }
-            k++;
+           if(max<c) 
+           {
+               max=c;
+           }
+           if(min>c)
+           {
+               min=c;
+           }
+           k++;
         }
     }
     if(k==0)
